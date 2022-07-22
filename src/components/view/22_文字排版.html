@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字排版</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .wrap{
+            padding: 50px;
+        }
+        .container{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            padding: 30px 0;
+        }
+        .container h1{
+            width: 400px;
+            text-align: right;
+            box-sizing: border-box;
+            padding: 0 15px;
+            background-color: #f5c7b9;
+        }
+        .container h1::after{
+            content: '';
+            display: block;
+            width: 4em;
+            height: 4px;
+            background-color: #000;
+            margin-left: auto;
+        }
+        .container .txt{
+            width: 800px;
+            box-sizing: border-box;
+            padding: 0 15px;
+            column-count: 2;
+            column-gap: 30px;
+        }
+
+        /* type 2 */
+        .container2{
+            width: 1200px;
+            margin: auto;
+            padding: 30px 0;
+        }
+        .container2 h1{
+            width: 300px;
+            text-align: right;
+            box-sizing: border-box;
+            padding: 15px;
+            border-right: 5px solid #000;
+            float: left;
+            margin-right: .5em;
+            font-size: 32px;
+        }
+        
+        .container2 .txt{
+            box-sizing: border-box;
+            padding: 0 15px;
+        }
+
+        /* type3 */
+        .container3{
+            width: 1200px;
+            margin: auto;
+            padding: 30px 0;
+        }
+        .container3 h1{
+            box-sizing: border-box;
+            padding: 15px;
+            margin-bottom: 30px;
+            font-size: 62px;
+            color: #aaa;
+            position: relative;
+        }
+        .container3 h1::after{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 45%;
+            background-color: #eee;
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+        }
+        .container3 .txt{
+            box-sizing: border-box;
+            padding: 0 15px;
+            columns: 2;
+            column-gap: 30px;
+
+        }
+        .container3 .txt p::first-letter{
+            font-size: 40px;
+            float: left;
+            padding-right: 10px;
+        }
+        /* type4 */
+        .container4{
+            position: relative;
+            width: 1200px;
+            margin: auto;          
+        }
+        .container4 h1{
+            width: 400px;
+            box-sizing: border-box;
+            padding: 15px;
+            background-color: #eee;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        .container4 .txt{
+            column-count: 2;
+            column-gap: 460px;
+        }
+        .container4 p{
+            line-height: 1.6;
+            margin-bottom: 1em;
+
+        }
+        .container4 p:first-child::first-letter{
+            font-size: 40px;
+            float: left;
+            padding-right: 6px;
+        }
+        /* type5 */
+        .container5{
+            position: relative;
+            width: 1200px;
+            margin: auto;    
+            padding: 30px 0;      
+        }
+        .container5 h1{
+            width: 400px;
+            font-size: 70px;
+            box-sizing: border-box;
+            padding: 15px;
+            float: right;
+            color: #aaa;
+            position: relative;
+        }
+        .container5 h1::before{
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 30px solid #eee;
+            z-index: -1;
+            bottom: 0;
+        }
+        .container5 .txt{
+            column-count: 2;
+            column-gap: 20px;
+        }
+        .container5 p{
+            line-height: 1.6;
+            margin-bottom: 1em;            
+        }
+        /* type6 */
+        .container6{
+            position: relative;
+            width: 1200px;
+            margin: auto;    
+            padding: 30px 0;      
+        }
+        .container6 h1{
+            width: 400px;
+            font-size: 70px;
+            box-sizing: border-box;
+            padding: 15px;
+            float: right;
+            color: #aaa;
+            position: relative;
+        }
+        .container6 h1::before{
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 30px solid #f1c555;
+            z-index: -1;
+            bottom: 0;
+            transform: rotate(20deg);
+        }
+        .container6 .txt{
+            column-count: 2;
+            column-gap: 20px;
+        }
+        .container6 p{
+            line-height: 1.6;
+            margin-bottom: 1em;            
+        }
+        /* type7 */
+        .container7{
+            width: 1200px;
+            margin: auto;
+            padding: 30px 0;
+            display: flex;
+        }
+        .container7 h1{
+            width: 400px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            order: 1;
+            font-size: 70px;
+            padding-left: 15px;
+            color: #aaa;
+            position: relative;
+        }
+        .container7 h1::before{
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border:30px solid #f1b444;
+            top: 0;
+            left: 0;
+            transform:rotate(10deg);
+            z-index: -1;
+        }
+        .container7 h1::after{
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border:30px solid #f1b555;
+            top: 0;
+            left: 0;
+            transform:rotate(17deg);
+            z-index: -1;
+        }
+        .container7 .txt{
+            width: 800px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            column-count: 2;
+            column-gap: 30px;
+            padding: 15px;
+            box-shadow: 0 0 20px #ccc;
+        }
+        .container7 .txt p:first-child::first-letter{
+            font-size: 40px;
+            float: left;
+            padding-right: 10px;
+        }
+        .container7 .txt p{
+            margin-bottom: 1em;
+        }
+        /* type8 */
+        .container8{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            padding: 30px 0;
+        }
+        .container8 h1{
+            width: 400px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            font-size: 50px;
+            padding-left: 15px;
+            color: #aaa;
+            transform: rotate(90deg) translateY(-400px);         
+            transform-origin: left top;
+        }  
+        .container8 .txt{
+            width: 800px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            column-count: 2;
+            column-gap: 30px;
+            padding: 15px;
+            box-shadow: 0 0 20px #ccc;
+        }
+        .container8 .txt p:first-child::first-letter{
+            font-size: 40px;
+            float: left;
+            padding-right: 10px;
+        }
+        .container8 .txt p{
+            margin-bottom: 1em;
+        }
+        /* type9 */
+        .container9{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: flex-end;
+            padding: 30px 0;
+            box-shadow: 0 0 20px #ccc;
+            position: relative;
+            overflow: hidden;
+        }
+        .container9 h1{
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 250px;
+            padding-left: 15px;
+            color: #ddd;
+            position: absolute;
+            left: 0;
+            top: -70px;
+            line-height: .8em;
+        }  
+        .container9 .txt{
+            width: 600px;
+            flex-shrink: 0;
+            box-sizing: border-box;
+            column-count: 2;
+            column-gap: 30px;
+            padding: 15px; 
+            position: relative;
+            z-index: 1;       
+        }
+        .container9 .txt p:first-child::first-letter{
+            font-size: 40px;
+            float: left;
+            padding-right: 10px;
+        }
+        .container9 .txt p{
+            margin-bottom: 1em;
+        }
+        /* type10 */
+        
+        /* type11 */
+        /* type12 */
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="container">
+            <h1>Lorem ipsum amet.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>
+        </div>
+
+        <div class="container2">
+            <h1>Lorem ipsum amet.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container3">
+            <h1>Lorem ipsum amet.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container4">
+            <h1>Lorem ipsum dolor sit adipisicing elit.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container5">
+            <h1>Lorem ipasum amedsadt.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container6">
+            <h1>Lorem ipasum amedsadt.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container7">
+            <h1>Lorem ipasum amedsadt.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container8">
+            <h1>Lorem ipsum amet.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container9">
+            <h1>Lor asds is amdfdsfet.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container10">
+            <h1>Lor asds is amdfdsfet.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container11">
+            <h1>Lor asds is amdfdsfet.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container12">
+            <h1>Lor asds is amdfdsfet.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+
+        <div class="container13">
+            <h1>Lor asds is amdfdsfet.</h1>
+            <div class="txt">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quod aut totam fugiat, eaque quos magnam dicta quaerat a ad cupiditate quam, vero tenetur dignissimos ab iure. Esse, temporibus voluptatibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic nulla, nam ducimus delectus aliquam illum repellendus beatae eveniet, placeat accusantium fuga atque eum eaque sint ullam totam! Fugiat quis optio iure, omnis quo ipsum facilis officia commodi quae. Doloremque harum cupiditate provident officia voluptates totam tempora perspiciatis odit facilis aspernatur veniam quod deleniti dolores, dolorum rerum sit iusto. Adipisci.</p>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa quidem fugiat neque non cum illum laborum nulla, consectetur incidunt mollitia quis deserunt, et maxime! Accusantium harum reiciendis soluta nihil sed rem quos sint quod sapiente corporis. Unde debitis dolore quidem.</p>
+            </div>            
+        </div>
+    </div>
+    
+
+</body>
+</html>

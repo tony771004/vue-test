@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        html, body{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(90deg, #3d5894, #08c7a5);
+        }
+        .table{
+            width: 800px;
+            margin: auto;
+            
+        }
+        .table table{
+            width: 100%;
+            border: 3px double #666;
+            background: #fff;
+            border-radius: 10px;
+        }
+        .table thead{
+            background: #333;
+            color: #fff;
+        }
+        .table thead th:first-child{
+            border-radius: 7px 0 0 0;
+        }
+        .table thead th:last-child{
+            border-radius: 0 7px 0 0;
+        }
+        .table tfoot td:first-child{
+            border-radius:  0 0 0 7px;
+        }
+        .table tfoot td:last-child{
+            border-radius: 0 0 7px 0;
+        }
+        .table tbody tr:nth-child(even){
+            background-color: #ffa;
+        }
+        .table tbody a{
+            color: #777;
+        }
+        .table tbody tr:hover{
+            background-color: #eee;
+        }
+        .table th{
+            border: 1px solid #666;
+            padding: 6px 10px;
+        }
+        .table td{
+            border: 1px solid #666;
+            padding: 6px 10px;
+        }
+        .table caption{
+            caption-side: bottom;
+            text-align: right;
+            padding: 10px 0;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="table">
+        <table>
+            <caption>
+                標題標題標題標題<a href="#">aaaaaaaaaaaaaaaaaaa</a>
+            </caption>
+            <thead>
+                <tr>
+                    <th scope="col">敬啟期待</th>
+                    <th scope="col">敬啟期待</th>
+                    <th scope="col">敬啟期待</th>
+                    <th scope="col">敬啟期待</th>
+                    <th scope="col">敬啟期待</th>
+                    <th scope="col">敬啟期待</th>
+                </tr>    
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#">敬啟期待</a></td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                </tr> 
+                <tr>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                </tr>  
+                <tr>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                </tr>  
+                <tr>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                </tr>  
+                <tr>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                </tr>  
+                <tr>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                    <td>敬啟期待</td>
+                </tr>  
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>備註</td>
+                    <td colspan="5">敬啟期待敬啟期待敬啟期待敬啟期待敬啟期待敬啟期待</td>
+                
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+
+</body>
+</html>
